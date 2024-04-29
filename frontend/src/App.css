@@ -1,0 +1,60 @@
+
+  .container-fp {
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+  }
+  .btn {
+    margin-right: 15px;
+    margin-top: 50px; /* Space between the buttons */
+  }
+  .btn:last-child {
+    margin-right: 0; /* Remove margin from the last button */
+  }
+
+  /* Overall layout and aesthetics */
+.container-d {
+    align-items: center; 
+    justify-content: center;
+    max-width: 800px;
+    margin-left: 10;
+}
+
+/* Chat message list styling */
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 0.75rem 1.25rem;
+    background-color: #fff;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+/* Input group enhancement */
+.input-group {
+    padding: 10px;
+}
+
+.input-group input {
+    border-right: none;
+}
+
+.input-group button {
+    border-left: none;
+}
+
+/* Button styling */
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
