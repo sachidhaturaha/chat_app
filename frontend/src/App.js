@@ -5,7 +5,11 @@ import FrontPage from './components/FrontPage';
 import Navbar from './components/Navbar';
 import Registerscreen from './screen/Registerscreen';
 import Loginscreen from './screen/Loginscreen';
-import Dashboard from './screen/Dashboard';
+import UserDashboard from './components/UserDashboard';
+import MyFriendCircle from './components/MyFriendCircle';
+import PeopleOnChatApp from './components/PeopleOnChatApp';
+import MyRequests from './components/MyRequests';
+import Chatwindow from './screen/Chatwindow';
 
 function App() {
   return (
@@ -15,7 +19,14 @@ function App() {
           <Route path="/" element={<FrontPage />} /> 
           <Route path="/register" element={<><Navbar /><Registerscreen /></>} />
           <Route path="/login" element={<><Navbar /><Loginscreen /></>} />
-          <Route path="/chat" element={<><Navbar /><Dashboard /></>} />
+          <Route path="/chat" element={<><Navbar /><UserDashboard /></>}>
+              <Route index element={<div>Select an option from the tabs.</div>} />
+              <Route path="myfriendcircle" element={<MyFriendCircle />} />
+              <Route path="peopleonchatapp" element={<PeopleOnChatApp />} />
+              <Route path="myrequests" element={<MyRequests />} />
+                
+          </Route>
+          <Route path="/chatting/:friendId/:friendName" element={<><Navbar /><UserDashboard /><Chatwindow /></>} />
         </Routes>
       </BrowserRouter>
     </div>

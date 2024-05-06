@@ -58,3 +58,72 @@
     background-color: #0069d9;
     border-color: #0062cc;
 }
+/* Apply to all cells in the table */
+.table td {
+    vertical-align: middle;  /* Aligns content of the cell to the middle vertically */
+    padding: 8px; /* Standard padding, adjust as needed */
+}
+
+/* Specific adjustments for buttons within the table */
+.table td button {
+    vertical-align: middle;  /* Ensures button aligns with other cell content */
+    margin: 0;  /* Removes any default margin */
+    padding: 4px 8px; /* Smaller padding to fit buttons neatly */
+    line-height: 1; /* Adjust line height to ensure text inside the button is centered */
+    display: inline-block; /* Helps with better alignment control */
+}
+
+.chat-window {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    margin: 20px;
+    padding: 10px;
+}
+
+.messages-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.message-item {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 60%;
+    word-wrap: break-word;
+}
+
+.my-message {
+    margin-left: auto;
+    background-color: #dcf8c6;
+}
+
+.friend-message {
+    background-color: #fff;
+}
+
+.message-input {
+    display: flex;
+}
+
+.message-input input {
+    flex-grow: 1;
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.message-input button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}

@@ -39,7 +39,7 @@ const db = mysql.createConnection({
 
 
 app.get('/', (req, res) => {
-    return res.json({message: 'Hello World'});
+    return res.json({message: 'Hello World, this is the server for chat app!'});
 });
 
 
@@ -50,6 +50,7 @@ app.get('/users', (req, res) => {
         return res.json(results);
     });
 });
+
 // Handle user registration
 app.post('/register', async (req, res) => {  // Make the main function async
     const { fullname, user_name, email, password } = req.body;
@@ -87,9 +88,6 @@ app.post('/login', (req, res) => {
         }
         if (results.length > 0) {
             const user = results[0];
-            console.log('User:', JSON.stringify(user))
-            console.log("Password: |",user.password,"|")
-            console.log("Password: |",password,"|")
 
             bcrypt.compare(password, user.password, (err, result) => {
             console.log("Password matched? :", result, err);
@@ -184,7 +182,6 @@ const port = 8081;
 server.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
 });
-
 
 
 

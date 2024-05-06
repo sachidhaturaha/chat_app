@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 function Registerscreen() {
+    const navigate = useNavigate();
+
     // State hooks for each input field
     const [fullname, setFullname] = useState('');
     const [user_name, setUsername] = useState('');
@@ -17,14 +21,18 @@ function Registerscreen() {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ fullname, user_name, email, password })
+
             })
                 .then(response => response.json())
                 .then(data => alert(data.message))
+                .then(navigate('/login'))
                 .catch(error => console.error('Error:', error));
         } else {
             alert("Please fill all the fields!");
         }
     }
+
+
 
 
     return (
